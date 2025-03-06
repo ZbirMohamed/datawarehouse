@@ -1,0 +1,6 @@
+sqlalchemy
+pandas
+pydantic
+psycopg2
+python-dotenv
+openpyxl

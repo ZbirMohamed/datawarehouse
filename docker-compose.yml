@@ -1,0 +1,43 @@
+services:
+
+  bronze:
+    container_name: db-bronze
+    image: postgres:14-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: bronze
+    volumes:
+      - bronze:/var/lib/postgresql/data
+
+  silver:
+    container_name: db-silver
+    image: postgres:14-alpine
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: silver
+    volumes:
+      - silver:/var/lib/postgresql/data
+
+  gold:
+    container_name: db-gold
+    image: postgres:14-alpine
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: gold
+    volumes:
+      - gold:/var/lib/postgresql/data
+
+
+volumes:
+  bronze:
+  silver:
+  gold:
