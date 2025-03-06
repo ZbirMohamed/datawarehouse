@@ -39,9 +39,9 @@ services:
       - .env
     restart: always
     environment:
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: test
-      POSTGRES_DB: gold
+      POSTGRES_USER: ${GOLD_USER}
+      POSTGRES_PASSWORD: ${GOLD_PASSWORD}
+      POSTGRES_DB: ${GOLD_DB}
     volumes:
       - gold:/var/lib/postgresql/data
 
